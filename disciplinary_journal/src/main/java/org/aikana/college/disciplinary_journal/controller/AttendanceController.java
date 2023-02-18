@@ -29,18 +29,34 @@ public class AttendanceController {
         return attendanceRepository.findAllByGroupId(groupId);
     }
 
-
-//    @GetMapping("flex/testFlex/{date}")
-//    public List<AttendanceEntity> findAllByDate (@PathVariable("date") @DateTimeFormat(pattern = "yyyy-MM-dd") Date date) {
-//        return attendanceRepository.findAllByDate(date);
-//    }
+    @GetMapping("/getAllByGroupIdAndDate/{groupId}/{date}")
+    public List<AttendanceEntity> findAllByDate (@PathVariable Integer groupId,
+                                                 @PathVariable("date") Date date,
+                                                 HttpServletResponse response) {
+        response.setCharacterEncoding("UTF-8");
+        return attendanceRepository.findAllByGroupIdAndDate(groupId, date);
+    }
 
     @GetMapping("/getAllByGroupIdAndDateRange/{groupId}/{from}/{to}")
     public List<AttendanceEntity> test (@PathVariable Integer groupId,
                                         @PathVariable java.sql.Date from,
-                                        @PathVariable java.sql.Date to) {
+                                        @PathVariable java.sql.Date to,
+                                        HttpServletResponse response) {
+        response.setCharacterEncoding("UTF-8");
         return attendanceRepository.findAllByGroupIdAndDateAfterAndDateBefore(groupId, from, to);
     }
 
+    @PostMapping("/postAttendance")
+    public AttendanceEntity postAttendance (@RequestBody AttendanceEntity attendanceEntity,
+                                            HttpServletResponse response) {
+        response.setCharacterEncoding("UTF-8");
+        return attendanceRepository.save(attendanceEntity);
+    }
 
+    @PutMapping("/updateAttendance")
+    public AttendanceEntity updateAttendance (@RequestBody AttendanceEntity attendanceEntity,
+                                              HttpServletResponse response) {
+        response.setCharacterEncoding("UTF-8");
+        return attendanceRepository.save(attendanceEntity);
+    }
 }
