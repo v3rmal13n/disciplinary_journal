@@ -14,8 +14,14 @@ public class AttendanceEntity {
     @Column(name = "date")
     private Date date;
     @Basic
+    @Column(name = "groupID")
+    private int groupId;
+    @Basic
     @Column(name = "studentID")
     private int studentId;
+    @Basic
+    @Column(name = "subjectID")
+    private int subjectId;
     @Basic
     @Column(name = "absence")
     private byte absence;
@@ -52,6 +58,22 @@ public class AttendanceEntity {
         this.absence = absence;
     }
 
+    public int getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(int groupId) {
+        this.groupId = groupId;
+    }
+
+    public int getSubjectId() {
+        return subjectId;
+    }
+
+    public void setSubjectId(int subjectId) {
+        this.subjectId = subjectId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -60,6 +82,8 @@ public class AttendanceEntity {
         AttendanceEntity that = (AttendanceEntity) o;
 
         if (id != that.id) return false;
+        if (groupId != that.groupId) return false;
+        if (studentId != that.studentId) return false;
         if (studentId != that.studentId) return false;
         if (absence != that.absence) return false;
         if (date != null ? !date.equals(that.date) : that.date != null) return false;
@@ -71,6 +95,8 @@ public class AttendanceEntity {
     public int hashCode() {
         int result = id;
         result = 31 * result + (date != null ? date.hashCode() : 0);
+        result = 31 * result + groupId;
+        result = 31 * result + studentId;
         result = 31 * result + studentId;
         result = 31 * result + (int) absence;
         return result;
