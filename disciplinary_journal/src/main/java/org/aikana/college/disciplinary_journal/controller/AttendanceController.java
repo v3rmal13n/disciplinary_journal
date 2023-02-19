@@ -46,6 +46,13 @@ public class AttendanceController {
         return attendanceRepository.findAllByGroupIdAndDateAfterAndDateBefore(groupId, from, to);
     }
 
+    @GetMapping("/getAllDateByGroupId/{groupId}")
+    public List<java.util.Date> findAllDateByGroupId (@PathVariable Integer groupId,
+                                                      HttpServletResponse response) {
+        response.setCharacterEncoding("UTF-8");
+        return attendanceRepository.findAllDateByGroupId(groupId);
+    }
+
     @PostMapping("/postAttendance")
     public AttendanceEntity postAttendance (@RequestBody AttendanceEntity attendanceEntity,
                                             HttpServletResponse response) {

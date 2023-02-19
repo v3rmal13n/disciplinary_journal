@@ -59,26 +59,26 @@ private final StudentRepository studentRepository;
         return studentRepository.findById(id);
     }
 
-    @PostMapping("/postStudent")
+    @PostMapping("/post")
     public StudentsEntity postStudent (@RequestBody StudentsEntity studentsEntity,
                                        HttpServletResponse response) {
         return studentRepository.save(studentsEntity);
     }
 
-    @PutMapping("/updateStudent")
+    @PutMapping("/update")
     public StudentsEntity putStudent (@RequestBody StudentsEntity studentsEntity,
                                       HttpServletResponse response) {
         return studentRepository.save(studentsEntity);
     }
 
-    @DeleteMapping("/deleteStudentById/{id}")
+    @DeleteMapping("/deleteById/{id}")
     public boolean deleteId (@PathVariable Integer id) {
 
         studentRepository.deleteById(id);
         return true;
     }
 
-    @DeleteMapping("/deleteAllStudentByGroupId/{groupId}")
+    @DeleteMapping("/deleteAllByGroupId/{groupId}")
     public boolean deleteAllByGroupId (@PathVariable Integer groupId) {
         studentRepository.deleteAllByGroupId(groupId);
         return true;
