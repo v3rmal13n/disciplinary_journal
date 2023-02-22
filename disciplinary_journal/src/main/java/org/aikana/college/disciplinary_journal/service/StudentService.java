@@ -7,8 +7,7 @@ import org.aikana.college.disciplinary_journal.repository.StudentRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+
 import java.util.Date;
 import java.util.List;
 

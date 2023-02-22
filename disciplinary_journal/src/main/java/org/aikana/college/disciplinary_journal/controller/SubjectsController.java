@@ -1,5 +1,6 @@
 package org.aikana.college.disciplinary_journal.controller;
 
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
 import org.aikana.college.disciplinary_journal.entity.SubjectsEntity;
 import org.aikana.college.disciplinary_journal.repository.SubjectRepository;
@@ -17,7 +18,8 @@ public class SubjectsController {
     private final SubjectRepository subjectRepository;
 
     @GetMapping("/getAll")
-    public List<SubjectsEntity> findAll () {
+    public List<SubjectsEntity> findAll (HttpServletResponse response) {
+        response.setCharacterEncoding("UTF-8");
         return subjectRepository.findAll();
     }
 }

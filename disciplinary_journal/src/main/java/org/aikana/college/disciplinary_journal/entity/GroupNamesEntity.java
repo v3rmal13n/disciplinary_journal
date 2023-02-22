@@ -1,6 +1,7 @@
 package org.aikana.college.disciplinary_journal.entity;
 
-import javax.persistence.*;
+
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "groups", schema = "disciplinary_diary", catalog = "")

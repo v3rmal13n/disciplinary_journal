@@ -1,5 +1,6 @@
 package org.aikana.college.disciplinary_journal.controller;
 
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
 import org.aikana.college.disciplinary_journal.entity.AttendanceEntity;
 import org.aikana.college.disciplinary_journal.repository.AttendanceRepository;
@@ -9,7 +10,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletResponse;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

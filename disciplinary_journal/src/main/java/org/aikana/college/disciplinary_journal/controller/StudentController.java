@@ -1,11 +1,11 @@
 package org.aikana.college.disciplinary_journal.controller;
 
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
 import org.aikana.college.disciplinary_journal.entity.StudentsEntity;
 import org.aikana.college.disciplinary_journal.repository.StudentRepository;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Optional;
 

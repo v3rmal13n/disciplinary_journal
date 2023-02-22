@@ -1,6 +1,7 @@
 package org.aikana.college.disciplinary_journal.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.sql.Date;
 
 @Entity
